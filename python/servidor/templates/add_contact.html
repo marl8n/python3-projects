@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+	{% with messages = get_flased_messages() %}
+		{% if messages %}
+			<p>{{message.decode('utf-8')}}</p
+		{% endif %}
+	{% endwith %}
+
+	{% block body %}
+	<form action="/add" method="post">
+		<fieldset>
+			<legend>Add new contact</legend>
+
+			<label for="name">Name</label>
+			<input id="name" name="phone" type="text">
+
+			<label for="phone">Phone</label>
+			<input id="phone" name="phone" type="text">
+
+			<label for="email">Email</label>
+			<input id="email" name="email" type="email">
+
+			<button type="submit" name="button">Add</button>
+		</fieldset>
+	</form>
+
+	<p>
+		<a href="/">Back</a>
+	</p>
+
+	{% endblock %}
